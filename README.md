@@ -1,1 +1,3 @@
-# odin-admin-dashboard
+# Odin Admin Dashboard
+## About
+## What I learned
