@@ -1,9 +1,9 @@
 :root {
   --brand:  hsl(220deg 80% 60%);
   --accent: hsl( 40deg 80% 60%);
-  --gray-20:hsl(  0deg  0% 20%);
-  --gray-50:hsl(  0deg  0% 50%);
-  --gray-90:hsl(  0deg  0% 90%);
+  --gray-20:hsl(220deg 20% 20%);
+  --gray-50:hsl(220deg 20% 50%);
+  --gray-90:hsl(220deg 20% 90%);
   --shadow: 4px 4px 5px 1px #00000010;
 }
 
@@ -59,10 +59,100 @@ a {
   }
 }
 
+input {
+  min-width: 200px;
+  max-width: 9999px;
+  width: 40vw;
+  border: none;
+  background-color: var(--gray-90);
+  border-radius: 9999px;
+  padding: .25rem .5rem;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: var(--brand);
+  color: white;
+  font-weight: 600;
+  padding: .5rem 2rem;
+  border-radius: 9999px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+a:focus, input:focus, button:focus {
+  outline: 2px solid var(--gray-20);
+  border: none;
+}
+
+::selection {
+  color: var(--gray-20);
+  background: var(--accent);
+}
+
+.icon {
+  display: inline;
+}
+
+.pfp {
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  background-size: cover !important;
+}
+
+.pfp-large {
+  width: 72px;
+  height: 72px;
+}
+
+.pfp-user {
+  background: url('../images/profiles/current_user.jpg');
+}
+
+.pfp-one {
+  background: url('../images/profiles/other_user_1.jpg');
+}
+
+.pfp-two {
+  background: url('../images/profiles/other_user_2.jpg');
+}
+
+.pfp-three {
+  background: url('../images/profiles/other_user_3.jpg');
+}
+
 .header {
   grid-area: header;
   background: white;
   box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+}
+
+.header .icon {
+  width: 32px;
+  height: 32px;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-top-left, .header-top-right, .header-bottom, .buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.buttons {
+  margin-left: auto;
 }
 
 .sidebar {
@@ -70,21 +160,32 @@ a {
   background: var(--brand);
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2rem;
   height: 100%;
-  padding: 1rem;
+  padding: .5rem;
+}
+
+.sidebar .icon {
+  margin: .75rem 1.25rem;
+}
+
+.logo .icon {
+  width: 48px;
+  height: 48px;
+}
+
+.sidebar .logo, .sidebar li {
+  display: flex;
+  align-items: center;
 }
 
 .sidebar nav {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 .sidebar ul {
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
   list-style: none;
   padding: 0;
 }

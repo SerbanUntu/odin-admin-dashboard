@@ -10,24 +10,76 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header"></header>
+  <header class="header">
+    <div class="header-top">
+      <div class="header-top-left">
+        <img class="icon" src="./images/icons/search.svg" alt="Search icon">
+        <input type="search" name="search" id="search-input">
+      </div>
+      <div class="header-top-right">
+        <img src="./images/icons/notifications.svg" alt="Notifications icon" class="icon">
+        <div class="pfp pfp-user"></div>
+        <h3>User name</h3>
+      </div>
+    </div>
+    <div class="header-bottom">
+      <div class="pfp pfp-large pfp-user"></div>
+      <div class="hello">
+        <h4>Hi there,</h4>
+        <h1>User name (@username)</h1>
+      </div>
+      <div class="buttons">
+        <button>New</button>
+        <button>Upload</button>
+        <button>Share</button>
+      </div>
+    </div>
+  </header>
   <div class="sidebar">
     <div class="logo">
+      <img class="icon" src="./images/icons/dashboard.svg" alt="Dashboard icon">
       <a href="">Dashboard</a>
     </div>
     <nav>
       <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">Profile</a></li>
-        <li><a href="">Messages</a></li>
-        <li><a href="">History</a></li>
-        <li><a href="">Tasks</a></li>
-        <li><a href="">Communities</a></li>
+        <li>
+          <img class="icon" src="./images/icons/home.svg" alt="Home icon">
+          <a href="">Home</a>
+        </li>
+        <li>
+          <img class="icon" src="./images/icons/profile.svg" alt="Profile icon">
+          <a href="">Profile</a>
+        </li>
+        <li>
+          <img class="icon" src="./images/icons/messages.svg" alt="Messages icon">
+          <a href="">Messages</a>
+        </li>
+        <li>
+          <img class="icon" src="./images/icons/history.svg" alt="History icon">
+          <a href="">History</a>
+        </li>
+        <li>
+          <img class="icon" src="./images/icons/tasks.svg" alt="Tasks icon">
+          <a href="">Tasks</a>
+        </li>
+        <li>
+          <img class="icon" src="./images/icons/communities.svg" alt="Communities icon">
+          <a href="">Communities</a>
+        </li>
       </ul>
       <ul>
-        <li><a href="">Settings</a></li>
-        <li><a href="">Support</a></li>
-        <li><a href="">Privacy</a></li>
+        <li>
+          <img class="icon" src="./images/icons/settings.svg" alt="Home icon">
+          <a href="">Settings</a>
+        </li>
+        <li>
+          <img class="icon" src="./images/icons/support.svg" alt="Support icon">
+          <a href="">Support</a>
+        </li>
+        <li>
+          <img class="icon" src="./images/icons/privacy.svg" alt="Privacy icon">
+          <a href="">Privacy</a>
+        </li>
       </ul>
     </nav>
   </div>
