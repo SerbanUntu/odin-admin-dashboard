@@ -36,7 +36,7 @@ body {
   font-family: "Inter", sans-serif;
   font-weight: 500;
   font-style: normal;
-  font-size: 16px;
+  font-size: 14px;
   color: var(--gray-20);
   overflow: hidden;
   display: grid;
@@ -47,7 +47,7 @@ body {
     "sidebar main-content";
 }
 
-p {
+p, small {
   color: var(--gray-50);
 }
 
@@ -57,6 +57,10 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+em {
+  font-style: normal;
 }
 
 input {
@@ -211,6 +215,9 @@ a:focus, input:focus, button:focus {
   grid-template-areas:
     "projects announcements"
     "projects trending";
+  h2 {
+    margin-bottom: .5rem;
+  }
 }
 
 .projects-section {
@@ -232,7 +239,7 @@ a:focus, input:focus, button:focus {
 
 .project-items {
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(2, 1fr);
 }
@@ -249,4 +256,79 @@ a:focus, input:focus, button:focus {
 
 .card {
   background: linear-gradient(to right, var(--accent), var(--accent) .5rem, white .5rem, white);
+  padding: 2rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  .icon {
+    opacity: 0;
+  }
+  &:hover {
+    .icon {
+      opacity: 0.5;
+    }
+  }
+}
+
+.card .icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.card .interactions {
+  display: flex;
+  gap: .75rem;
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+.announcement-items {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+
+  *:last-child {
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
+.announcement {
+  border-bottom: 1px solid var(--gray-90);
+  padding-bottom: .75rem;
+  margin-bottom: .75rem;
+}
+
+.trending-items {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.profile {
+  display: grid;
+  grid-template-rows: 24px 24px;
+  grid-template-columns: 48px 1fr;
+  grid-template-areas: 
+    "pfp username"
+    "pfp name";
+  column-gap: .5rem;
+}
+
+.grid .pfp {
+  grid-area: pfp;
+}
+
+.profile em {
+  grid-area: username;
+}
+
+.profile p {
+  grid-area: name;
 }
