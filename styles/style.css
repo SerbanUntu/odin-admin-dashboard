@@ -53,10 +53,6 @@ p, small {
 
 a {
   text-decoration: none;
-  font-weight: 600;
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 em {
@@ -66,7 +62,7 @@ em {
 input {
   min-width: 200px;
   max-width: 9999px;
-  width: 40vw;
+  flex: 1;
   border: none;
   background-color: var(--gray-90);
   border-radius: 9999px;
@@ -132,10 +128,10 @@ a:focus, input:focus, button:focus {
   grid-area: header;
   background: white;
   box-shadow: var(--shadow);
-  display: flex;
-  flex-direction: column;
+  display: grid;
   padding: 1rem 2rem;
-  justify-content: space-between;
+  grid-template-rows: 1fr 2fr;
+  grid-template-columns: 2fr 1fr;
 }
 
 .header .icon {
@@ -143,20 +139,14 @@ a:focus, input:focus, button:focus {
   height: 32px;
 }
 
-.header-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header-top-left, .header-top-right, .header-bottom, .buttons {
+.search, .profile-details, .welcome, .buttons {
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
 
-.buttons {
-  margin-left: auto;
+.profile-details, .buttons {
+  justify-self: end;
 }
 
 .sidebar {
@@ -166,7 +156,7 @@ a:focus, input:focus, button:focus {
   flex-direction: column;
   gap: 2rem;
   height: 100%;
-  padding: .5rem;
+  padding: .5rem 0;
 }
 
 .sidebar .icon {
@@ -178,9 +168,17 @@ a:focus, input:focus, button:focus {
   height: 48px;
 }
 
-.sidebar .logo, .sidebar li {
+.sidebar .logo, .sidebar a {
   display: flex;
   align-items: center;
+  &:hover {
+    background-color: #00000010;
+  }
+  &:focus {
+    outline: none;
+    padding-left: .25rem;
+    background: linear-gradient(to right, white, white .25rem, #00000010 .25rem, #00000010);
+  }
 }
 
 .sidebar nav {
@@ -194,12 +192,12 @@ a:focus, input:focus, button:focus {
   padding: 0;
 }
 
-.logo a {
+.logo p {
   font-size: 1.75rem;
   color: white;
 }
 
-.sidebar nav a {
+.sidebar nav p {
   font-size: 1.25rem;
   color: white;
 }

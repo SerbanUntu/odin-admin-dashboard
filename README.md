@@ -2,11 +2,11 @@
 ## About
 ## What I learned
 ## Todos
-- [ ] Populate main content
-- [ ] Add margin and styles to headings
-- [ ] Redo header using grid
-- [ ] Redo sidebar links
+- [x] Populate main content
+- [x] Redo header using grid
+- [x] Redo sidebar links
 - [ ] Add dark theme
+- [ ] Populate with custom content
 - [ ] Make design responsive
 - [ ] Accessibility
 - [ ] Semantic HTML
