@@ -6,7 +6,7 @@
 - [x] Redo header using grid
 - [x] Redo sidebar links
 - [ ] Add dark theme
-- [ ] Populate with custom content
+- [x] Populate with custom content
 - [ ] Make design responsive
 - [ ] Accessibility
 - [ ] Semantic HTML

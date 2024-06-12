@@ -1,9 +1,11 @@
 :root {
-  --brand:  hsl(220deg 80% 60%);
-  --accent: hsl( 40deg 80% 60%);
-  --gray-20:hsl(220deg 20% 20%);
-  --gray-50:hsl(220deg 20% 50%);
-  --gray-90:hsl(220deg 20% 90%);
+  --white:       hsl(  0deg  0% 100%);
+  --alpha-black: hsl(  0deg  0%   0% / 10%);
+  --brand:       hsl(220deg 80%  60%);
+  --accent:      hsl( 40deg 80%  60%);
+  --gray-20:     hsl(220deg 20%  20%);
+  --gray-50:     hsl(220deg 20%  50%);
+  --gray-90:     hsl(220deg 20%  90%);
   --shadow: 4px 4px 5px 1px #00000010;
 }
 
@@ -24,6 +26,7 @@ img, picture, video, canvas, svg {
 
 input, button, textarea, select {
   font: inherit;
+  color: inherit;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -32,7 +35,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 body {
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   font-family: "Inter", sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -40,7 +43,7 @@ body {
   color: var(--gray-20);
   overflow: hidden;
   display: grid;
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: min-content 1fr;
   grid-template-columns: 1fr 5fr;
   grid-template-areas:
     "sidebar header"
@@ -73,7 +76,7 @@ button {
   border: none;
   cursor: pointer;
   background: var(--brand);
-  color: white;
+  color: var(--white);
   font-weight: 600;
   padding: .5rem 2rem;
   border-radius: 9999px;
@@ -85,6 +88,10 @@ button {
 a:focus, input:focus, button:focus {
   outline: 2px solid var(--gray-20);
   border: none;
+}
+
+a:has(> img):focus {
+  outline: none;
 }
 
 ::selection {
@@ -126,7 +133,7 @@ a:focus, input:focus, button:focus {
 
 .header {
   grid-area: header;
-  background: white;
+  background: var(--white);
   box-shadow: var(--shadow);
   display: grid;
   padding: 1rem 2rem;
@@ -137,6 +144,8 @@ a:focus, input:focus, button:focus {
 .header .icon {
   width: 32px;
   height: 32px;
+  stroke: var(--gray-20);
+  fill: var(--gray-20);
 }
 
 .search, .profile-details, .welcome, .buttons {
@@ -172,12 +181,12 @@ a:focus, input:focus, button:focus {
   display: flex;
   align-items: center;
   &:hover {
-    background-color: #00000010;
+    background-color: var(--alpha-black);
   }
   &:focus {
     outline: none;
     padding-left: .25rem;
-    background: linear-gradient(to right, white, white .25rem, #00000010 .25rem, #00000010);
+    background: linear-gradient(to right, white, white .25rem, var(--alpha-black) .25rem, var(--alpha-black));
   }
 }
 
@@ -204,6 +213,7 @@ a:focus, input:focus, button:focus {
 
 .main-content {
   grid-area: main-content;
+  overflow: auto;
   background: var(--gray-90);
   padding: 2rem;
   display: grid;
@@ -238,8 +248,7 @@ a:focus, input:focus, button:focus {
 .project-items {
   display: grid;
   gap: 1.5rem;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
 .project-items, .announcement-items, .trending-items {
@@ -247,13 +256,13 @@ a:focus, input:focus, button:focus {
 }
 
 .card, .announcement-items, .trending-items {
-  background-color: white;
+  background-color: var(--white);
   border-radius: .5rem;
   box-shadow: var(--shadow);
 }
 
 .card {
-  background: linear-gradient(to right, var(--accent), var(--accent) .5rem, white .5rem, white);
+  background: linear-gradient(to right, var(--accent), var(--accent) .5rem, var(--white) .5rem, var(--white));
   padding: 2rem;
   cursor: pointer;
   display: flex;
@@ -329,4 +338,16 @@ a:focus, input:focus, button:focus {
 
 .profile p {
   grid-area: name;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --white:       hsl(220deg 30%  10%);
+    --alpha-black: hsl(  0deg  0% 100% / 10%);
+    --brand:       hsl(220deg 70%  70%);
+    --accent:      hsl( 40deg 70%  70%);
+    --gray-20:     hsl(220deg 30%  80%);
+    --gray-50:     hsl(220deg 30%  50%);
+    --gray-90:     hsl(220deg 30%  20%);
+  }
 }
