@@ -5,10 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Odin Admin Dashboard</title>
   <link rel="stylesheet" href="./styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="header"></header>
-  <div class="sidebar"></div>
-  <div class="main-content"></div>
+  <div class="sidebar">
+    <div class="logo">
+      <a href="">Dashboard</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Profile</a></li>
+        <li><a href="">Messages</a></li>
+        <li><a href="">History</a></li>
+        <li><a href="">Tasks</a></li>
+        <li><a href="">Communities</a></li>
+      </ul>
+      <ul>
+        <li><a href="">Settings</a></li>
+        <li><a href="">Support</a></li>
+        <li><a href="">Privacy</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="main-content">
+    <section class="projects-section">
+      <h2>Your Projects</h2>
+      <div class="project-items">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+      </div>
+    </section>
+    <section class="announcements-section">
+      <h2>Announcements</h2>
+      <div class="announcement-items"></div>
+    </section>
+    <section class="trending-section">
+      <h2>Trending</h2>
+      <div class="trending-items"></div>
+    </section>
+  </div>
 </body>
 </html>
